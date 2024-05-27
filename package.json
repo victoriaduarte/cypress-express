@@ -1,0 +1,12 @@
+{
+  "name": "cypress-express",
+  "version": "1.0.0",
+  "description": "E2E testing project of the Mark L application",
+  "main": "index.js",
+  "repository": "https://github.com/victoriaduarte/cypress-express.git",
+  "author": "vique <victoriarduarte@hotmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "12.2.0"
+  }
+}
