@@ -29,4 +29,10 @@ describe('tasks', () => {
             .should('be.visible')
     });
 
+    it.only('required field', () => {
+
+        cy.createTask()
+        
+        cy.isRequired('This is a required field')
+    });
 })
