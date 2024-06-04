@@ -39,4 +39,26 @@ describe('tasks', () => {
         });
     })
 
+    context('update', () => {
+        it('should complete a task', () => {
+
+            const task = {
+                name: 'Practice cypress',
+                is_done: false
+            }
+    
+            cy.removeTaskByName(task.name)
+            cy.postTask(task)
+    
+            cy.visit('http://localhost:3000')
+
+            cy.contains('p', task.name)
+                .parent()
+                .find('button[class*=ItemToggle]')
+                .click()
+
+            cy.contains('p', task.name)
+                .should('have.css','text-decoration-line','line-through')
+        });
+    })
 })
