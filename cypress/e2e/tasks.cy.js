@@ -2,6 +2,14 @@
 
 describe('tasks', () => {
 
+    let testData;
+
+    before(() => {
+        cy.fixture("tasks").then(t => {
+            testData = t
+        })
+    })
+
     context('create', () => {
         it('should create a new task', () => {
 
@@ -17,10 +25,7 @@ describe('tasks', () => {
     
         it('should not create duplicate task', () => {
     
-            const task = {
-                name: 'Study Javascript',
-                is_done: false
-            }
+            const task = testData.dup
     
             cy.removeTaskByName(task.name)
             cy.postTask(task)
